@@ -87,13 +87,4 @@ rag-banking-assistant/
 - API keys secured via environment variables
 
 ---
-
-## 📝 Personal Notes
-# Add your own notes here
-# e.g. which banks you have added
-# e.g. what documents are indexed
-# e.g. future improvements you want to make
-
----
-
 *🏦 Built for personal banking document management*
