@@ -31,31 +31,69 @@ lookups and WhatsApp delivery of required documents.
 | Twilio | WhatsApp integration |
 | python-dotenv | API key management |
 
-## ⚙️ Setup
+## ⚙️ Personal Setup
 
-### 1. Clone the repository
-git clone https://github.com/yourusername/rag-banking-assistant.git
-cd rag-banking-assistant
-
-### 2. Install dependencies
+### 1. Install dependencies
 pip install -r requirements.txt
 
-### 3. Configure environment variables
-cp .env.example .env
-# Add your API keys to .env
+### 2. Add your API keys
+Create a .env file in root folder and add:
+OPENAI_API_KEY=your_openai_api_key_here
+TWILIO_ACCOUNT_SID=your_twilio_sid_here
+TWILIO_AUTH_TOKEN=your_twilio_auth_token_here
+TWILIO_WHATSAPP_NUMBER=+14155238886
+
+### 3. Add bank documents
+Drop your bank PDF files into:
+data/
 
 ### 4. Run the app
 streamlit run app.py
 
-## 📱 WhatsApp Setup
-1. Create a Twilio account at twilio.com
-2. Enable WhatsApp sandbox
-3. Add Twilio credentials to .env
+---
 
-## 🔒 Security
-- Never commit your .env file
-- All API keys stored as environment variables
-- PDFs stored locally, never pushed to GitHub
+## 📁 Project Structure
+rag-banking-assistant/
+│
+├── app.py                  → Main Streamlit application
+├── whatsapp.py             → WhatsApp integration
+├── requirements.txt        → All dependencies
+├── .env                    → Your API keys (never share)
+├── .env.example            → API key template
+├── .gitignore              → Files hidden from GitHub
+│
+├── utils/
+│   ├── pdf_processor.py    → PDF reading and saving
+│   └── rag_engine.py       → RAG pipeline and querying
+│
+├── data/                   → Your bank PDFs go here
+└── assets/                 → Screenshots and images
 
-## 📜 License
-MIT License — free to use and modify
+---
+
+## 📱 How To Use
+1. Run the app with streamlit run app.py
+2. Upload bank PDF documents from sidebar
+3. Ask any question about banking processes
+4. Get instant answers from your documents
+5. Send answers directly to WhatsApp if needed
+
+---
+
+## 🔒 Security Notes
+- .env file is private and never pushed to GitHub
+- All bank PDFs stored locally on your machine
+- Repository is private — only accessible by you
+- API keys secured via environment variables
+
+---
+
+## 📝 Personal Notes
+# Add your own notes here
+# e.g. which banks you have added
+# e.g. what documents are indexed
+# e.g. future improvements you want to make
+
+---
+
+*🏦 Built for personal banking document management*
